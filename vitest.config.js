@@ -17,7 +17,6 @@ export default defineConfig({
         '**/*.config.js',
         '**/*.config.ts',
         'src/main.jsx',
-        'src/assets/',
         'dist/',
         'coverage/',
         'public/',

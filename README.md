@@ -104,6 +104,54 @@ The application follows a modern React architecture with:
 - **@testing-library/jest-dom**: Custom Jest matchers
 
 
+
+## Technology Decisions
+
+### Why These Libraries Were Chosen
+
+#### **Axios vs Fetch**
+- **Choice**: Axios
+- **Reasons**: 
+  - Built-in JSON parsing and error handling
+  - Request/response interceptors for centralized error handling
+  - Better TypeScript support and IDE intellisense
+  - Automatic request/response transformation
+  - Built-in timeout and request cancellation
+  - More consistent API across different browsers
+
+#### **Vite vs Create React App**
+- **Choice**: Vite
+- **Reasons**:
+  - Significantly faster development server startup (< 1s vs 10-30s)
+  - Lightning-fast hot module replacement (HMR)
+  - Optimized production builds with Rollup
+  - Native ES modules support
+  - Better performance with large codebases
+  - More flexible configuration options
+  - Active development and modern architecture
+
+#### **Tailwind CSS vs Other CSS Frameworks**
+- **Choice**: Tailwind CSS
+- **Rationale**:
+  - Utility-first approach enables rapid prototyping
+  - Consistent design system built-in
+  - Excellent developer experience with IntelliSense
+  - Automatic purging of unused CSS in production
+  - Highly customizable without bloated components
+  - Better maintainability than custom CSS
+  - Responsive design made simple with breakpoint prefixes
+
+#### **Vitest vs Jest**
+- **Choice**: Vitest
+- **Rationale**:
+  - Native Vite integration with shared configuration
+  - Faster test execution (up to 10x faster than Jest)
+  - Built-in TypeScript support without additional setup
+  - Watch mode with instant feedback
+  - Better ES modules support
+  - Compatible with Jest API for easy migration
+  - Integrated coverage reporting
+
 ## 🔌 API Integration
 
 The application integrates with the GitHub API to fetch repository data:
