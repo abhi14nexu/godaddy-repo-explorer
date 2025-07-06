@@ -80,14 +80,6 @@ The application implements several performance optimizations to ensure fast load
 - **Batch Loading**: Loads 30 repositories per page instead of all at once
 - **Load More Button**: Users can progressively load more repositories
 - **Reduced Initial Load Time**: Faster initial page load with minimal data
-- **Memory Efficient**: Only loads data as needed
-
-### Additional Optimizations
-
-- **Debounced Search**: Search queries are debounced to prevent excessive API calls
-- **Optimized Re-renders**: Components are optimized to minimize unnecessary re-renders
-- **Lazy Loading**: Components and data are loaded only when needed
-- **Efficient Filtering**: Client-side filtering for instant results
 
 ### Performance Metrics
 
@@ -153,9 +145,6 @@ The application follows a modern React architecture with:
   - Lightning-fast hot module replacement (HMR)
   - Optimized production builds with Rollup
   - Native ES modules support
-  - Better performance with large codebases
-  - More flexible configuration options
-  - Active development and modern architecture
 
 #### **Tailwind CSS vs Other CSS Frameworks**
 - **Choice**: Tailwind CSS
@@ -163,10 +152,6 @@ The application follows a modern React architecture with:
   - Utility-first approach enables rapid prototyping
   - Consistent design system built-in
   - Excellent developer experience with IntelliSense
-  - Automatic purging of unused CSS in production
-  - Highly customizable without bloated components
-  - Better maintainability than custom CSS
-  - Responsive design made simple with breakpoint prefixes
 
 #### **Vitest vs Jest**
 - **Choice**: Vitest
@@ -174,10 +159,6 @@ The application follows a modern React architecture with:
   - Native Vite integration with shared configuration
   - Faster test execution (up to 10x faster than Jest)
   - Built-in TypeScript support without additional setup
-  - Watch mode with instant feedback
-  - Better ES modules support
-  - Compatible with Jest API for easy migration
-  - Integrated coverage reporting
 
 ## 🔌 API Integration
 
