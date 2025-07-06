@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '../../test/utils/test-utils';
-import Loading from '../Loading';
+import Loading from '../ui/Loading';
 
 describe('Loading', () => {
   it('renders with default message', () => {

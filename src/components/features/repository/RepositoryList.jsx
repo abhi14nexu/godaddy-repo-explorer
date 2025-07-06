@@ -1,9 +1,6 @@
-import { useRepositories } from '../hooks/useRepositories';
+import { useRepositories } from '../../../hooks/useRepositories';
 import RepositoryCard from './RepositoryCard';
-import SearchBar from './SearchBar';
-import FilterBar from './FilterBar';
-import Loading from './Loading';
-import Error from './Error';
+import { SearchBar, FilterBar, Loading, Error } from '../../ui';
 
 const RepositoryList = () => {
   const {
@@ -60,7 +57,7 @@ const RepositoryList = () => {
       </div>
 
       {/* Repository Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {repositories.map((repository) => (
           <RepositoryCard key={repository.id} repository={repository} />
         ))}

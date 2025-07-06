@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { renderWithRouter, screen } from '../../test/utils/test-utils';
-import Breadcrumb from '../Breadcrumb';
+import Breadcrumb from '../ui/Breadcrumb';
 
 const mockItems = [
   { label: 'Home', href: '/' },

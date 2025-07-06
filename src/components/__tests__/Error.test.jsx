@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '../../test/utils/test-utils';
 import userEvent from '@testing-library/user-event';
-import Error from '../Error';
+import Error from '../ui/Error';
 
 describe('Error', () => {
   it('renders with default message', () => {

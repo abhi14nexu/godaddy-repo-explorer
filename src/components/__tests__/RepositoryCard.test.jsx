@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { renderWithRouter, screen } from '../../test/utils/test-utils';
-import RepositoryCard from '../RepositoryCard';
+import RepositoryCard from '../features/repository/RepositoryCard';
 import { mockRepositories } from '../../test/mocks/githubApiMocks';
 
 // Transform mock data to match component expectations

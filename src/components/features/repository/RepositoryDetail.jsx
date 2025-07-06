@@ -1,9 +1,7 @@
 import { useParams } from 'react-router-dom';
-import { useRepository } from '../hooks/useRepository';
-import Breadcrumb from './Breadcrumb';
+import { useRepository } from '../../../hooks/useRepository';
+import { Breadcrumb, Loading, Error } from '../../ui';
 import RepositoryStats from './RepositoryStats';
-import Loading from './Loading';
-import Error from './Error';
 
 const RepositoryDetail = () => {
   const { repoName } = useParams();
