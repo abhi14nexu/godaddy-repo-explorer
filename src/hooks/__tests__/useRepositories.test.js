@@ -37,7 +37,6 @@ describe('useRepositories', () => {
 
     expect(result.current.repositories).toHaveLength(3);
     expect(result.current.error).toBeNull();
-    expect(result.current.totalCount).toBe(3);
     expect(result.current.filteredCount).toBe(3);
   });
 
@@ -173,12 +172,8 @@ describe('useRepositories', () => {
       expect(result.current.loading).toBe(false);
     });
 
-    expect(result.current.totalCount).toBe(1);
-
     await act(async () => {
       await result.current.refetch();
     });
-
-    expect(result.current.totalCount).toBe(3);
   });
 }); 

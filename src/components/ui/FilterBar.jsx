@@ -4,8 +4,7 @@ const FilterBar = ({
   filterLanguage, 
   onLanguageChange, 
   availableLanguages, 
-  filteredCount, 
-  totalCount 
+  filteredCount
 }) => {
   const sortOptions = [
     { value: 'updated', label: 'Last Updated' },
@@ -51,7 +50,7 @@ const FilterBar = ({
       </div>
 
       <div className="text-sm text-gray-600 bg-gray-100/60 px-3 py-1 rounded-lg">
-        Showing {filteredCount} of {totalCount} repositories
+        Showing {filteredCount} repositories
       </div>
     </div>
   );

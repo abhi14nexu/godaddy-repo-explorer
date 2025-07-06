@@ -33,36 +33,30 @@ api.interceptors.response.use(
 );
 
 /**
- * Fetch all repositories for GoDaddy organization
- * Uses pagination to get all repositories, not just the first 100
- * @returns {Promise<Array>} Array of repository objects
+ * Fetch repositories for GoDaddy organization with pagination
+ * @param {number} page - Page number (1-based)
+ * @param {number} perPage - Number of repositories per page
+ * @returns {Promise<{repositories: Array, hasMore: boolean, currentPage: number}>}
  */
-export const fetchGoDaddyRepositories = async () => {
+export const fetchGoDaddyRepositories = async (page = 1, perPage = 30) => {
   try {
-    let allRepositories = [];
-    let page = 1;
-    let hasMorePages = true;
+    const response = await api.get(`/orgs/${ORG_NAME}/repos`, {
+      params: {
+        per_page: perPage,
+        page: page,
+        sort: 'updated',
+        direction: 'desc',
+      },
+    });
 
-    while (hasMorePages) {
-      const response = await api.get(`/orgs/${ORG_NAME}/repos`, {
-        params: {
-          per_page: 100, // Maximum allowed per page
-          page: page,
-          sort: 'updated',
-          direction: 'desc',
-        },
-      });
-
-      const repositories = response.data;
-      allRepositories = [...allRepositories, ...repositories];
-
-      // Check if there are more pages
-      // If we get less than 100 repositories, we've reached the last page
-      hasMorePages = repositories.length === 100;
-      page++;
-    }
+    const repositories = response.data;
+    const hasMore = repositories.length === perPage;
     
-    return allRepositories;
+    return {
+      repositories,
+      hasMore,
+      currentPage: page
+    };
   } catch (error) {
     console.error('Error fetching repositories:', error);
     throw error;
